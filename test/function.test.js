@@ -26,5 +26,54 @@ test("Should be null",function(){
 // Check value 
 test("Should be Falsy",function(){
 
-    expect(functions.isNull()).toBe(null);
+    expect(functions.checkValue(undefined)).toBeFalsy();
+});
+
+// Check Object 
+test("User Should be Rashidul Hasan",function(){
+
+    expect(functions.createUser()).toEqual({firstName:"Rashidul",lastName:"Hasan"});
+});
+
+
+//  greater than 
+
+test("Check Less than and grater than",function(){
+
+    expect(functions.graterThan()).toBeGreaterThan(299);
+
+})
+
+// Less than
+
+test("Check Less than and grater than",function(){
+
+    expect(functions.lessThan()).toBeLessThan(400);
+
+})
+
+// Regular Expression 
+
+test("Check Less than and grater than",function(){
+
+    expect('Rashidul').not.toMatch(/c/);
+
+})
+
+//Array 
+test("Check Arrays",function(){
+
+    let names=['Ratul',"Rashidul","Hasan"];
+
+    expect(names).toContain("Ratul");
+
+});
+
+// Working with ASYNC Data   
+
+test("Fetch Data From User Name Should Be Leanne Graham  ",function(){
+
+    
+
+
 });
