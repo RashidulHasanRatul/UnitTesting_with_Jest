@@ -1,5 +1,6 @@
 
-const functions = require("./function");
+const axios = require('axios');
+const functions = require("./Module/function");
 
 test("Add 2+2 Equal to 4",function(){
 
@@ -69,11 +70,17 @@ test("Check Arrays",function(){
 
 });
 
-// Working with ASYNC Data   
+// // Working with Promise   
+//  test('User fetched name should be Leanne Graham', () => {
+//     expect.assertions(1)
+//   return functions.fetchUser().then(data => {
+//   expect(data.name).toEqual('Leanne Graham');
+//    });
+//  });
 
-test("Fetch Data From User Name Should Be Leanne Graham  ",function(){
-
-    
-
-
-});
+ // Async Await
+test('User fetched name should be Leanne Graham', async () => {
+    expect.assertions(1);
+    const data = await functions.fetchUser();
+    expect(data.name).toEqual('Leanne Graham');
+  });
